@@ -1,0 +1,1027 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/BlockIo/block_io-nodejs">block_io (v1.0.9-2)</a>
+</h1>
+<h4>Block.io API wrapper for node.js</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.block_io">module block_io</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.block_io">
+            function <span class="apidocSignatureSpan"></span>block_io
+            <span class="apidocSignatureSpan">(config, pin, version, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey">
+            function <span class="apidocSignatureSpan">block_io.</span>ECKey
+            <span class="apidocSignatureSpan">(d, compressed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.super_">
+            function <span class="apidocSignatureSpan">block_io.</span>ECKey.super_
+            <span class="apidocSignatureSpan">(d, compressed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io._constructMethod">
+            function <span class="apidocSignatureSpan">block_io.</span>_constructMethod
+            <span class="apidocSignatureSpan">(type, callMethod)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.parseResponse">
+            function <span class="apidocSignatureSpan">block_io.</span>parseResponse
+            <span class="apidocSignatureSpan">(cb)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">number <span class="apidocSignatureSpan">block_io.</span>DEFAULT_VERSION</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">block_io.</span>ECKey.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">block_io.</span>ECKey.super_.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">block_io.</span>PASSTHROUGH_METHODS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">block_io.</span>SWEEP_METHODS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">block_io.</span>WITHDRAWAL_METHODS</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">block_io.</span>helper</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">block_io.</span>DEFAULT_PORT</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">block_io.</span>DEFAULT_SERVER</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">block_io.</span>HOST</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">string <span class="apidocSignatureSpan">block_io.</span>USER_AGENT</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.block_io.ECKey">module block_io.ECKey</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.ECKey">
+            function <span class="apidocSignatureSpan">block_io.</span>ECKey
+            <span class="apidocSignatureSpan">(d, compressed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey._fromSuper">
+            function <span class="apidocSignatureSpan">block_io.ECKey.</span>_fromSuper
+            <span class="apidocSignatureSpan">(key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.fromBuffer">
+            function <span class="apidocSignatureSpan">block_io.ECKey.</span>fromBuffer
+            <span class="apidocSignatureSpan">(buf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.fromHex">
+            function <span class="apidocSignatureSpan">block_io.ECKey.</span>fromHex
+            <span class="apidocSignatureSpan">(hexKey)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.fromPassphrase">
+            function <span class="apidocSignatureSpan">block_io.ECKey.</span>fromPassphrase
+            <span class="apidocSignatureSpan">(pass)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.fromPassphraseString">
+            function <span class="apidocSignatureSpan">block_io.ECKey.</span>fromPassphraseString
+            <span class="apidocSignatureSpan">(pass)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.fromWIF">
+            function <span class="apidocSignatureSpan">block_io.ECKey.</span>fromWIF
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.makeRandom">
+            function <span class="apidocSignatureSpan">block_io.ECKey.</span>makeRandom
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.super_">
+            function <span class="apidocSignatureSpan">block_io.ECKey.</span>super_
+            <span class="apidocSignatureSpan">(d, compressed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">block_io.ECKey.</span>curve</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.block_io.ECKey.prototype">module block_io.ECKey.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.prototype.sign">
+            function <span class="apidocSignatureSpan">block_io.ECKey.prototype.</span>sign
+            <span class="apidocSignatureSpan">(buf)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.prototype.signHex">
+            function <span class="apidocSignatureSpan">block_io.ECKey.prototype.</span>signHex
+            <span class="apidocSignatureSpan">(hexData)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.block_io.ECKey.super_">module block_io.ECKey.super_</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.super_.super_">
+            function <span class="apidocSignatureSpan">block_io.ECKey.</span>super_
+            <span class="apidocSignatureSpan">(d, compressed)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.super_.fromWIF">
+            function <span class="apidocSignatureSpan">block_io.ECKey.super_.</span>fromWIF
+            <span class="apidocSignatureSpan">(string)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.super_.makeRandom">
+            function <span class="apidocSignatureSpan">block_io.ECKey.super_.</span>makeRandom
+            <span class="apidocSignatureSpan">(compressed, rng)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">block_io.ECKey.super_.</span>curve</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.block_io.ECKey.super_.prototype">module block_io.ECKey.super_.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.super_.prototype.sign">
+            function <span class="apidocSignatureSpan">block_io.ECKey.super_.prototype.</span>sign
+            <span class="apidocSignatureSpan">(hash)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.ECKey.super_.prototype.toWIF">
+            function <span class="apidocSignatureSpan">block_io.ECKey.super_.prototype.</span>toWIF
+            <span class="apidocSignatureSpan">(network)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.block_io.helper">module block_io.helper</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.helper.decrypt">
+            function <span class="apidocSignatureSpan">block_io.helper.</span>decrypt
+            <span class="apidocSignatureSpan">(ciphertext, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.helper.encrypt">
+            function <span class="apidocSignatureSpan">block_io.helper.</span>encrypt
+            <span class="apidocSignatureSpan">(data, key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.helper.extractKey">
+            function <span class="apidocSignatureSpan">block_io.helper.</span>extractKey
+            <span class="apidocSignatureSpan">(encrypted_data, b64_enc_key)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.helper.pinToKey">
+            function <span class="apidocSignatureSpan">block_io.helper.</span>pinToKey
+            <span class="apidocSignatureSpan">(pin, salt, iterations)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.block_io.helper.signInputs">
+            function <span class="apidocSignatureSpan">block_io.helper.</span>signInputs
+            <span class="apidocSignatureSpan">(privkey, inputs)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.block_io" id="apidoc.module.block_io">module block_io</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.block_io" id="apidoc.element.block_io.block_io">
+        function <span class="apidocSignatureSpan"></span>block_io
+        <span class="apidocSignatureSpan">(config, pin, version, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">block_io = function (config, pin, version, options) {
+
+  this.options = {
+    allowNoPin: false
+  };
+
+  if (typeof(config) === 'string') {
+
+    this.key = config;
+    this.version = version || BlockIo.DEFAULT_VERSION;
+    this.server = BlockIo.DEFAULT_SERVER;
+    this.port = BlockIo.DEFAULT_PORT;
+
+    if (pin) {
+      this.pin = pin;
+      this.aesKey = helper.pinToKey(this.pin);
+    }
+
+    if (options &amp;&amp; typeof(options) == 'object') this._cloneOptions(options);
+
+  } else if (config &amp;&amp; typeof(config) == 'object') {
+    this.key = config.api_key;
+    this.version = config.version || BlockIo.DEFAULT_VERSION;
+    this.server = config.server || BlockIo.DEFAULT_SERVER;
+    this.port = config.port || BlockIo.DEFAULT_PORT;
+
+    if (config.pin) {
+      this.pin = config.pin;
+      this.aesKey = helper.pinToKey(this.pin);
+    }
+
+    if (config.options) this._cloneOptions(config.options);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey" id="apidoc.element.block_io.ECKey">
+        function <span class="apidocSignatureSpan">block_io.</span>ECKey
+        <span class="apidocSignatureSpan">(d, compressed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ECKey = function (d, compressed) {
+	if (d) {
+		Bitcoin.ECKey.call(this, d, compressed);
+	} else {
+		var newKey = Bitcoin.ECKey.makeRandom();
+		Bitcoin.ECKey.call(this, newKey.d, true);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.super_" id="apidoc.element.block_io.ECKey.super_">
+        function <span class="apidocSignatureSpan">block_io.</span>ECKey.super_
+        <span class="apidocSignatureSpan">(d, compressed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ECKey(d, compressed) {
+  assert(d.signum() &gt; 0, 'Private key must be greater than 0')
+  assert(d.compareTo(ECKey.curve.n) &lt; 0, 'Private key must be less than the curve order')
+
+  var Q = ECKey.curve.G.multiply(d)
+
+  this.d = d
+  this.pub = new ECPubKey(Q, compressed)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io._constructMethod" id="apidoc.element.block_io._constructMethod">
+        function <span class="apidocSignatureSpan">block_io.</span>_constructMethod
+        <span class="apidocSignatureSpan">(type, callMethod)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_constructMethod = function (type, callMethod) {
+  var fn = ['_', type].join('');
+  return function (args, cb) {
+
+    // handle overload for function (cb), without args
+    if (!cb &amp;&amp; typeof(args) === 'function') {
+      cb = args;
+      args = {};
+    }
+
+    this[fn]('POST', callMethod, args, cb);
+  };
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.parseResponse" id="apidoc.element.block_io.parseResponse">
+        function <span class="apidocSignatureSpan">block_io.</span>parseResponse
+        <span class="apidocSignatureSpan">(cb)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">parseResponse = function (cb) {
+
+  return function (err, res, body) {
+    if (err) return cb(err);
+
+    var errOut = null;
+    var errMsg = ERR_UNKNOWN;
+    var data = null;
+
+    try {
+      data = JSON.parse(body);
+    } catch (ex) {
+      errOut = ex;
+    }
+
+    if (data !== null &amp;&amp; (typeof(data) !== 'object' || data.status !== 'success')) {
+      if (data.error_message) errMsg = data.error_message;
+      if (data.data &amp;&amp; typeof(data.data) === 'object' &amp;&amp;
+        data.data.error_message) errMsg = data.data.error_message;
+      errOut = new Error(errMsg);
+    }
+
+    return cb(errOut, data);
+  };
+
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.block_io.ECKey" id="apidoc.module.block_io.ECKey">module block_io.ECKey</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.ECKey" id="apidoc.element.block_io.ECKey.ECKey">
+        function <span class="apidocSignatureSpan">block_io.</span>ECKey
+        <span class="apidocSignatureSpan">(d, compressed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">ECKey = function (d, compressed) {
+	if (d) {
+		Bitcoin.ECKey.call(this, d, compressed);
+	} else {
+		var newKey = Bitcoin.ECKey.makeRandom();
+		Bitcoin.ECKey.call(this, newKey.d, true);
+	}
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey._fromSuper" id="apidoc.element.block_io.ECKey._fromSuper">
+        function <span class="apidocSignatureSpan">block_io.ECKey.</span>_fromSuper
+        <span class="apidocSignatureSpan">(key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_fromSuper = function (key) {
+	if (!(key instanceof Bitcoin.ECKey)) return key;
+	return new Key(key.d, key.pub.compressed);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.fromBuffer" id="apidoc.element.block_io.ECKey.fromBuffer">
+        function <span class="apidocSignatureSpan">block_io.ECKey.</span>fromBuffer
+        <span class="apidocSignatureSpan">(buf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromBuffer = function (buf) {
+	assert(Buffer.isBuffer(buf));
+	var d = BigInteger.fromBuffer(buf);
+	return new Key(d, true);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.fromHex" id="apidoc.element.block_io.ECKey.fromHex">
+        function <span class="apidocSignatureSpan">block_io.ECKey.</span>fromHex
+        <span class="apidocSignatureSpan">(hexKey)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromHex = function (hexKey) {
+	return this.fromBuffer(new Buffer(hexKey, 'hex'));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.fromPassphrase" id="apidoc.element.block_io.ECKey.fromPassphrase">
+        function <span class="apidocSignatureSpan">block_io.ECKey.</span>fromPassphrase
+        <span class="apidocSignatureSpan">(pass)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromPassphrase = function (pass) {
+	var buf = Buffer.isBuffer(pass) ? pass : new Buffer(pass, 'hex');
+	buf = crypto.createHash('sha256').update(buf).digest();
+	return this.fromBuffer(buf);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.fromPassphraseString" id="apidoc.element.block_io.ECKey.fromPassphraseString">
+        function <span class="apidocSignatureSpan">block_io.ECKey.</span>fromPassphraseString
+        <span class="apidocSignatureSpan">(pass)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromPassphraseString = function (pass) {
+	return this.fromPassphrase(new Buffer(pass));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.fromWIF" id="apidoc.element.block_io.ECKey.fromWIF">
+        function <span class="apidocSignatureSpan">block_io.ECKey.</span>fromWIF
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromWIF = function () {
+	var key = Bitcoin.ECKey.fromWIF.apply(Bitcoin.ECKey, arguments);
+	return this._fromSuper(key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.makeRandom" id="apidoc.element.block_io.ECKey.makeRandom">
+        function <span class="apidocSignatureSpan">block_io.ECKey.</span>makeRandom
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeRandom = function () {
+	var key = Bitcoin.ECKey.makeRandom.apply(Bitcoin.ECKey, arguments);
+	return this._fromSuper(key);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.super_" id="apidoc.element.block_io.ECKey.super_">
+        function <span class="apidocSignatureSpan">block_io.ECKey.</span>super_
+        <span class="apidocSignatureSpan">(d, compressed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ECKey(d, compressed) {
+  assert(d.signum() &gt; 0, 'Private key must be greater than 0')
+  assert(d.compareTo(ECKey.curve.n) &lt; 0, 'Private key must be less than the curve order')
+
+  var Q = ECKey.curve.G.multiply(d)
+
+  this.d = d
+  this.pub = new ECPubKey(Q, compressed)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.block_io.ECKey.prototype" id="apidoc.module.block_io.ECKey.prototype">module block_io.ECKey.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.prototype.sign" id="apidoc.element.block_io.ECKey.prototype.sign">
+        function <span class="apidocSignatureSpan">block_io.ECKey.prototype.</span>sign
+        <span class="apidocSignatureSpan">(buf)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sign = function (buf) {
+	return Bitcoin.ecdsa.sign(Bitcoin.ECKey.curve, buf, this.d);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.prototype.signHex" id="apidoc.element.block_io.ECKey.prototype.signHex">
+        function <span class="apidocSignatureSpan">block_io.ECKey.prototype.</span>signHex
+        <span class="apidocSignatureSpan">(hexData)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">signHex = function (hexData) {
+	var buf = new Buffer(hexData, 'hex');
+	return this.sign(buf).toDER().toString('hex');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.block_io.ECKey.super_" id="apidoc.module.block_io.ECKey.super_">module block_io.ECKey.super_</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.super_.super_" id="apidoc.element.block_io.ECKey.super_.super_">
+        function <span class="apidocSignatureSpan">block_io.ECKey.</span>super_
+        <span class="apidocSignatureSpan">(d, compressed)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function ECKey(d, compressed) {
+  assert(d.signum() &gt; 0, 'Private key must be greater than 0')
+  assert(d.compareTo(ECKey.curve.n) &lt; 0, 'Private key must be less than the curve order')
+
+  var Q = ECKey.curve.G.multiply(d)
+
+  this.d = d
+  this.pub = new ECPubKey(Q, compressed)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.super_.fromWIF" id="apidoc.element.block_io.ECKey.super_.fromWIF">
+        function <span class="apidocSignatureSpan">block_io.ECKey.super_.</span>fromWIF
+        <span class="apidocSignatureSpan">(string)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">fromWIF = function (string) {
+  var payload = base58check.decode(string)
+  var compressed = false
+
+  // Ignore the version byte
+  payload = payload.slice(1)
+
+  if (payload.length === 33) {
+    assert.strictEqual(payload[32], 0x01, 'Invalid compression flag')
+
+    // Truncate the compression flag
+    payload = payload.slice(0, -1)
+    compressed = true
+  }
+
+  assert.equal(payload.length, 32, 'Invalid WIF payload length')
+
+  var d = BigInteger.fromBuffer(payload)
+  return new ECKey(d, compressed)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.super_.makeRandom" id="apidoc.element.block_io.ECKey.super_.makeRandom">
+        function <span class="apidocSignatureSpan">block_io.ECKey.super_.</span>makeRandom
+        <span class="apidocSignatureSpan">(compressed, rng)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">makeRandom = function (compressed, rng) {
+  rng = rng || randomBytes
+
+  var buffer = rng(32)
+  typeForce('Buffer', buffer)
+  assert.equal(buffer.length, 32, 'Expected 256-bit Buffer from RNG')
+
+  var d = BigInteger.fromBuffer(buffer)
+  d = d.mod(ECKey.curve.n)
+
+  return new ECKey(d, compressed)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.block_io.ECKey.super_.prototype" id="apidoc.module.block_io.ECKey.super_.prototype">module block_io.ECKey.super_.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.super_.prototype.sign" id="apidoc.element.block_io.ECKey.super_.prototype.sign">
+        function <span class="apidocSignatureSpan">block_io.ECKey.super_.prototype.</span>sign
+        <span class="apidocSignatureSpan">(hash)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sign = function (hash) {
+  return ecdsa.sign(ECKey.curve, hash, this.d)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.ECKey.super_.prototype.toWIF" id="apidoc.element.block_io.ECKey.super_.prototype.toWIF">
+        function <span class="apidocSignatureSpan">block_io.ECKey.super_.prototype.</span>toWIF
+        <span class="apidocSignatureSpan">(network)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toWIF = function (network) {
+  network = network || networks.bitcoin
+
+  var bufferLen = this.pub.compressed ? 34 : 33
+  var buffer = new Buffer(bufferLen)
+
+  buffer.writeUInt8(network.wif, 0)
+  this.d.toBuffer(32).copy(buffer, 1)
+
+  if (this.pub.compressed) {
+    buffer.writeUInt8(0x01, 33)
+  }
+
+  return base58check.encode(buffer)
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.block_io.helper" id="apidoc.module.block_io.helper">module block_io.helper</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.helper.decrypt" id="apidoc.element.block_io.helper.decrypt">
+        function <span class="apidocSignatureSpan">block_io.helper.</span>decrypt
+        <span class="apidocSignatureSpan">(ciphertext, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">decrypt = function (ciphertext, key) {
+
+	if (!Buffer.isBuffer(key)) key = new Buffer(key, 'base64');
+
+	var cipher = crypto.createDecipheriv('aes-256-ecb', key, NULL_IV);
+
+	var bufs = [];
+	bufs.push(cipher.update(ciphertext, 'base64'));
+	bufs.push(cipher.final());
+
+	var tLength = bufs[0].length + bufs[1].length;
+	var text = Buffer.concat(bufs, tLength);
+
+	return text.toString('utf-8');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.helper.encrypt" id="apidoc.element.block_io.helper.encrypt">
+        function <span class="apidocSignatureSpan">block_io.helper.</span>encrypt
+        <span class="apidocSignatureSpan">(data, key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">encrypt = function (data, key) {
+
+	if (!Buffer.isBuffer(key)) key = new Buffer(key, 'base64');
+
+	var cipher = crypto.createCipheriv('aes-256-ecb', key, NULL_IV);
+
+	var bufs = [];
+	bufs.push(cipher.update(data, 'utf-8'));
+	bufs.push(cipher.final());
+
+	var ctLength = bufs[0].length + bufs[1].length;
+	var ciphertext = Buffer.concat(bufs, ctLength);
+
+	return ciphertext.toString('base64');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.helper.extractKey" id="apidoc.element.block_io.helper.extractKey">
+        function <span class="apidocSignatureSpan">block_io.helper.</span>extractKey
+        <span class="apidocSignatureSpan">(encrypted_data, b64_enc_key)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extractKey = function (encrypted_data, b64_enc_key) {
+	var decrypted = this.decrypt(encrypted_data, b64_enc_key);
+	return ECKey.fromPassphrase(decrypted);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.helper.pinToKey" id="apidoc.element.block_io.helper.pinToKey">
+        function <span class="apidocSignatureSpan">block_io.helper.</span>pinToKey
+        <span class="apidocSignatureSpan">(pin, salt, iterations)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">pinToKey = function (pin, salt, iterations) {
+	if (!salt) salt = '';
+	if (!iterations) iterations = 2048;
+
+	var buf = pkbdf2(pin, salt, iterations / 2, 16);
+	buf = pkbdf2(buf.toString('hex'), salt, iterations / 2, 32);
+
+	return buf.toString('base64');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.block_io.helper.signInputs" id="apidoc.element.block_io.helper.signInputs">
+        function <span class="apidocSignatureSpan">block_io.helper.</span>signInputs
+        <span class="apidocSignatureSpan">(privkey, inputs)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">signInputs = function (privkey, inputs) {
+	if (!(privkey instanceof ECKey)) return inputs;
+
+	var pubkey = privkey.pub.toHex();
+
+    inputs.forEach(function (input) {
+      input.signers.forEach(function (signer) {
+
+        if (signer.signer_public_key !== pubkey) return;
+        signer.signed_data = privkey.signHex(input.data_to_sign);
+
+      });
+    });
+
+    return inputs;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
